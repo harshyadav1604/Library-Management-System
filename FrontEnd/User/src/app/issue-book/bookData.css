@@ -1,0 +1,16 @@
+table, th, td{
+    border: 1px solid blue;
+}
+
+th, td{
+    padding: 10px;
+    text-align: left;
+}
+
+th{
+    font-weight: normal;
+}
+
+table{
+    border-collapse: collapse;
+}

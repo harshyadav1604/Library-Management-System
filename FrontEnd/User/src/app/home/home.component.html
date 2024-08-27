@@ -1,0 +1,34 @@
+<div id="logo-container">
+    <img src="assets/images/IITG_logo.png" id="logo">
+    <div id="text_editing">LMS Librarian Web Portal</div>
+    <div style="margin-left:80%; margin-top: -37px;"><button mat-raised-button color="primary" (click)="logout()" id="button">Log Out</button></div>
+</div>
+<div id="MenuBar">
+    <nav mat-tab-nav-bar [backgroundColor]="background">
+
+        <a mat-tab-link routerLink="/home/book_info" id="book_info" routerLinkActive="active-link"  (click)="activeLink = 'book_info'"
+        [active]="activeLink == 'book_info'">Book Info</a>
+
+        <a mat-tab-link routerLink="/home/inventory" id="inventory" routerLinkActive="active-link"  (click)="activeLink = 'inventory'"
+        [active]="activeLink == 'inventory'"> Inventory</a>
+
+        <a mat-tab-link routerLink="/home/issue_book" id="issue_book" routerLinkActive="active-link"  (click)="activeLink = 'issue_book'"
+        [active]="activeLink == 'issue_book'"> Issue Book</a>
+
+        <a mat-tab-link routerLink="/home/return_book" id="return_book" routerLinkActive="active-link"  (click)="activeLink = 'return_book'"
+        [active]="activeLink == 'return_book'"> Return Book</a>
+
+        <a mat-tab-link routerLink="/home/returned_book" id="returned_book" routerLinkActive="active-link"  (click)="activeLink = 'returned_book'"
+        [active]="activeLink == 'returned_book'"> History</a>
+
+        <a mat-tab-link routerLink="/home/defaulters" id="defaulters" routerLinkActive="active-link"  (click)="activeLink = 'defaulters'"
+        [active]="activeLink == 'defaulters'"> Defaulters</a>
+
+        <a mat-tab-link routerLink="/home/librarian_settings" id="librarian_settings" routerLinkActive="active-link"  (click)="activeLink = 'librarian_settings'"
+        [active]="activeLink == 'librarian_settings'">Settings</a>
+
+    </nav>
+
+</div>
+
+<router-outlet></router-outlet>

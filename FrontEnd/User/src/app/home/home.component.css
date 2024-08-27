@@ -1,0 +1,25 @@
+
+#logo{
+    position: absolute;
+    height: 80px;
+    margin-left: 12px;
+    margin-top: 8px;
+}
+
+#text_editing{
+    padding-left: 520px;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: xx-large;
+    color: #312be2;
+    text-shadow: 5px 5px 12px black;
+}
+
+#button{
+    float: right;
+    margin-right: 10%;
+}
+
+#MenuBar{
+    margin-top: 56px;
+}

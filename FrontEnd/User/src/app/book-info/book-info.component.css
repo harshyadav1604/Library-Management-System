@@ -1,0 +1,41 @@
+.inventory_form_field{
+    width:90%;
+    margin-left: 2%;
+}
+
+#button{
+    margin-left: 3%;
+}
+
+tr{
+    font-size: 12px;
+    height: 30px;
+}
+
+
+
+th{
+    font-size: 13px;
+}
+
+tr:nth-child(even) {
+    /* background-color: rgb(191, 236, 191); */
+    background-color: skyblue;
+}
+
+
+
+tr:nth-child(odd) {
+    background-color: lightblue;
+}
+
+tr:first-child > th{
+    background-color: #312be2;
+    color: white;
+}
+
+
+
+button{
+    height: 35px;
+}

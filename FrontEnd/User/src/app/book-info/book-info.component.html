@@ -1,0 +1,148 @@
+<mat-card-content>
+    <form>
+        <br>
+        <div class="row">
+
+            <div class="col-sm-3">
+                <mat-form-field appearance="outline" class="inventory_form_field">
+                    <mat-label>Name</mat-label>
+                    <input type="text" matInput placeholder="Name" [formControl]="name">
+                    <mat-icon matPrefix>menu_book</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+                <mat-form-field appearance="outline" class="inventory_form_field">
+                    <mat-label>ISBN</mat-label>
+                    <input type="text" matInput placeholder="ISBN" [formControl]="isbn">
+                    <mat-icon matPrefix>tag</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+                <mat-form-field appearance="outline" class="inventory_form_field">
+                    <mat-label>Author</mat-label>
+                    <input type="text" matInput placeholder="Author" [formControl]="author">
+                    <mat-icon matPrefix>person</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+                <mat-form-field appearance="outline" class="inventory_form_field">
+                    <mat-label>Publisher</mat-label>
+                    <input type="text" matInput placeholder="Publisher" [formControl]="publisher">
+                    <mat-icon matPrefix>groups</mat-icon>
+                </mat-form-field>
+            </div>
+
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <mat-form-field appearance="outline" class="inventory_form_field">
+                    <mat-label>Genre</mat-label>
+                    <input type="text" matInput placeholder="Genre" [formControl]="genre">
+                    <mat-icon matPrefix>book_2</mat-icon>
+
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+                <mat-form-field appearance="outline" class="inventory_form_field">
+                    <mat-label>Edition No.</mat-label>
+                    <input type="text" matInput placeholder="Edition No." [formControl]="edition">
+                    <mat-icon matPrefix>format_list_numbered</mat-icon>
+
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+                <container-element [ngSwitch]="isUpdateFlag">
+                    <button mat-raised-button *ngSwitchCase="false" color="primary" id="button" (click)="add_book()">Submit</button>
+                    <button mat-raised-button *ngSwitchCase="true" color="primary" id="button" (click)="update_book()">Update</button>
+                    <button mat-raised-button color="primary" id="button" (click)="clear_book()">Clear</button>
+                </container-element>
+            </div>
+
+            <div class="col-sm-3">
+                <mat-form-field appearance="outline" class="inventory_form_field">
+                    <mat-label>Search</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" #input>
+                    <mat-icon matPrefix>search</mat-icon>
+                </mat-form-field>
+                 
+            </div>
+        </div>
+
+
+
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+            <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="isbn">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ISBN </th>
+                <td mat-cell *matCellDef="let element"> {{element.isbn}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="author">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Author </th>
+                <td mat-cell *matCellDef="let element"> {{element.author}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="publisher">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Publisher </th>
+                <td mat-cell *matCellDef="let element"> {{element.publisher}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="genre">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Genre </th>
+                <td mat-cell *matCellDef="let element"> {{element.genre}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="edition">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Edition No </th>
+                <td mat-cell *matCellDef="let element"> {{element.edition}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="modify">
+                <th mat-header-cell *matHeaderCellDef> Modify </th>
+                <td mat-cell *matCellDef="let element">
+                    <!-- <button mat-raised-button color="accent" id="button" (click)="load_book(element.id)">Modify</button> -->
+                    <mat-icon aria-hidden="false" aria-label="modify" fontIcon="edit" (click)="load_book(element.id)"></mat-icon>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="delete">
+                <th mat-header-cell *matHeaderCellDef> Delete </th>
+                <td mat-cell *matCellDef="let element">
+                    <!-- <button mat-raised-button color="warn" id="button" (click)="delete_book(element.id)">Delete</button> -->
+                    <mat-icon aria-hidden="false" aria-label="delete" fontIcon="delete" (click)="delete_book(element.id)"></mat-icon>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons aria-label="Select page of periodic elements"></mat-paginator>
+
+
+
+
+
+    </form>
+</mat-card-content>
+
+

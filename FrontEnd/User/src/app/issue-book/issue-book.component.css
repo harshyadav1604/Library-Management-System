@@ -1,0 +1,57 @@
+/* .issue-book-mat-card{
+    margin-left: 20%;
+    margin-top: 1%;
+    margin-right: 20%;
+    background-color: red;
+    padding: 2%;
+    border-style: double;
+    padding-left: 15%;
+} */
+
+.issue-book-h1{
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.row{
+    margin-left: -8px;
+}
+
+#searchRow{
+    margin-left: 9px;
+}
+
+.book_info{
+    margin-left: 2%;
+}
+
+.bookInput{
+   margin-left: 1%;
+}
+
+th{
+    font-size: 13px;
+}
+
+tr{
+    font-size: 12px;
+    height: 30px;
+}
+
+
+
+tr:nth-child(even) {
+    /* background-color: rgb(191, 236, 191); */
+    background-color: skyblue;
+}
+
+
+
+tr:nth-child(odd) {
+    background-color: lightblue;
+}
+
+tr:first-child > th{
+    background-color: #312be2;
+    color: white;
+}

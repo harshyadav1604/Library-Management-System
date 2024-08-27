@@ -1,0 +1,33 @@
+.row{
+    margin-left: 1%;
+}
+
+
+th{
+    font-size: 13px;
+}
+
+
+tr:nth-child(even) {
+    /* background-color: rgb(191, 236, 191); */
+    background-color: skyblue;
+}
+
+#searchRow{
+    margin-left: -8px;
+}
+
+
+tr:nth-child(odd) {
+    background-color: lightblue;
+}
+
+tr:first-child > th{
+    background-color: #312be2;
+    color: white;
+}
+
+tr{
+    font-size: 12px;
+    height: 30px;
+}

@@ -1,0 +1,54 @@
+<mat-card-content>
+    <form>
+
+        <br>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <mat-form-field appearance="outline" class="inventory_form_field">
+                    <mat-label>Name</mat-label>
+                    <input type="text" matInput placeholder="Name" [formControl]="name">
+                    <mat-icon matPrefix>person</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+                <mat-form-field appearance="outline" class="inventory_form_field">
+                    <mat-label>Username</mat-label>
+                    <input type="text" matInput placeholder="Username" [formControl]="username">
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+                <mat-form-field appearance="outline" class="inventory_form_field">
+                    <mat-label>Email Id</mat-label>
+                    <input type="text" matInput placeholder="EmailId" [formControl]="emailId">
+                </mat-form-field>
+            </div>
+
+            <div class="col-sm-3">
+                <mat-form-field appearance="outline" class="inventory_form_field">
+                    <mat-label>Mobile Number</mat-label>
+                    <input type="text" matInput placeholder="mobileNo" [formControl]="mobileNo">
+                </mat-form-field>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-sm-3">
+               
+                <button mat-raised-button color="primary" id="button" (click)="add_librarian()">Submit</button>
+
+            </div>
+
+        </div>
+
+
+
+
+    </form>
+</mat-card-content>

@@ -1,0 +1,22 @@
+<div id="logo-container">
+    <img src="assets/images/IITG_logo.png" id="logo">
+    <div id="text_editing">LMS Student Web Portal</div>
+    <div style="margin-left:80%; margin-top: -37px;"><button mat-raised-button color="primary" (click)="logout()" id="button">Log Out</button></div>
+</div>
+<div id="MenuBar">
+    <nav mat-tab-nav-bar [backgroundColor]="background">
+       
+        <a mat-tab-link routerLink="/studentHome/student_issue_book" id="issue_book" routerLinkActive="active-link"  (click)="activeLink = 'student_issue_book'"
+        [active]="activeLink == 'student_issue_book'"> Issue Book</a>
+
+        <a mat-tab-link routerLink="/studentHome/student_return_book" id="return_book" routerLinkActive="active-link"  (click)="activeLink = 'student_return_book'"
+        [active]="activeLink == 'student_return_book'"> Return Book</a>
+
+        <a mat-tab-link routerLink="/studentHome/student_settings" id="student_settings" routerLinkActive="active-link"  (click)="activeLink = 'student_settings'"
+        [active]="activeLink == 'student_settings'">Settings</a>
+
+    </nav>
+
+</div>
+
+<router-outlet></router-outlet>
